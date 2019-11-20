@@ -1,15 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components/macro'
 
 export default function Card({ question, answer }) {
+  const [isHidden, setIsHidden] = useState(true)
+  const buttonText = isHidden ? 'Show answer' : 'Hide answer'
+  const onButtonClick = () => setIsHidden(!isHidden)
   return (
     <CardWrapper>
       <p>{question}</p>
-      <p>{answer}</p>
+      <Answer active={!isHidden}>{answer}</Answer>
+      <button onClick={onButtonClick}>{buttonText}</button>
     </CardWrapper>
   )
 }
+
+const Answer = styled.p`
+  transition: all 0.3s;
+  max-height: ${props => (props.active ? '100px' : '0')};
+  overflow-y: hidden;
+`
 
 Card.propTypes = {
   question: PropTypes.string.isRequired,
