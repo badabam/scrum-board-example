@@ -21,7 +21,7 @@ function App() {
   return (
     <Router>
       <Nav
-        items={[
+        links={[
           { path: '/', text: 'Hello' },
           { path: '/create', text: 'Create' },
         ]}

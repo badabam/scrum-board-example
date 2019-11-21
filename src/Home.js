@@ -21,4 +21,5 @@ export default function Home({ cards, toggleBookmark }) {
 const Grid = styled.section`
   display: grid;
   gap: 20px;
+  padding: 10px;
 `

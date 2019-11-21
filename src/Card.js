@@ -22,10 +22,12 @@ export default function Card({
   )
 }
 
-const Answer = styled.p`
+const Answer = styled.pre`
   transition: all 0.3s;
   max-height: ${props => (props.active ? '100px' : '0')};
   overflow-y: hidden;
+  white-space: pre-wrap;
+  word-break: break-all;
 `
 
 const CardWrapper = styled.section`
