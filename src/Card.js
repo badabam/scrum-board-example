@@ -1,6 +1,7 @@
 import React, { useState, useLayoutEffect, useRef } from 'react'
 import styled from 'styled-components/macro'
 import Bookmark from './Bookmark'
+import useAnswerHeight from './useAnswerHeight'
 
 export default function Card({
   question,
@@ -9,23 +10,9 @@ export default function Card({
   isBookmarked,
 }) {
   const [isHidden, setIsHidden] = useState(true)
-  const [maxHeight, setMaxHeight] = useState(undefined)
   const buttonText = isHidden ? 'Show answer' : 'Hide answer'
   const answerEl = useRef(undefined)
-
-  useLayoutEffect(() => {
-    const answer = answerEl.current
-    const originals = {
-      className: answer.className,
-      transition: answer.style.transition,
-    }
-    answer.style.transition = 'none'
-    answer.className = ''
-    const height = answer.getBoundingClientRect().height
-    answer.className = originals.className
-    answer.style.transition = originals.transition
-    setMaxHeight(height)
-  }, [answer])
+  const maxHeight = useAnswerHeight(answerEl)
 
   return (
     <CardWrapper>
