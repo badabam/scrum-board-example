@@ -5,11 +5,11 @@ import styled from 'styled-components/macro'
 export default function Home({ cards, toggleBookmark }) {
   return (
     <Grid>
-      {cards.map(({ question, answer, id, isBookmarked }, index) => (
+      {cards.map(({ question, answer, _id, isBookmarked }, index) => (
         <Card
-          onBookmarkClick={() => toggleBookmark(index)}
+          onBookmarkClick={() => toggleBookmark(_id)}
           isBookmarked={isBookmarked}
-          key={id}
+          key={_id}
           question={question}
           answer={answer}
         />
