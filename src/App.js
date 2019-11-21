@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
-
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import cardsData from './cards.json'
-import Home from './Home.js'
 import Create from './Create.js'
+import Home from './Home.js'
 import Nav from './Nav.js'
 
 function App() {
