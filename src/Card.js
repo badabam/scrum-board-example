@@ -14,7 +14,10 @@ export default function Card({
   const onButtonClick = () => setIsHidden(!isHidden)
   return (
     <CardWrapper>
-      <Bookmark active={isBookmarked} onClick={onBookmarkClick} />
+      <Bookmark
+        active={isBookmarked}
+        onClick={onBookmarkClick} // guard
+      />
       <p>{question}</p>
       <Answer active={!isHidden}>{answer}</Answer>
       <button onClick={onButtonClick}>{buttonText}</button>
@@ -41,4 +44,6 @@ const CardWrapper = styled.section`
 Card.propTypes = {
   question: PropTypes.string.isRequired,
   answer: PropTypes.string.isRequired,
+  onBookmarkClicked: PropTypes.func.isRequired,
+  isBookmarked: PropTypes.bool.isRequired,
 }
