@@ -2,6 +2,7 @@ import React from 'react'
 import { withKnobs, text, boolean, number } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 import Card from './Card'
+import styled from 'styled-components/macro'
 
 export default {
   title: 'Card',
