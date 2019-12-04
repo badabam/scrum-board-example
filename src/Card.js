@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React, { useRef, useState } from 'react'
 import styled from 'styled-components/macro'
 import Bookmark from './Bookmark'
-import useAnswerHeight from './useAnswerHeight'
+import useAnswerHeight from './hooks/useAnswerHeight'
 
 export default function Card({
   question,
