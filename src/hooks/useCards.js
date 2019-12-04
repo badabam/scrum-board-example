@@ -6,10 +6,17 @@ export default function useCards() {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    getCards().then(loadedCards => {
-      setCards(loadedCards)
-      setIsLoading(false)
-    })
+    getCards()
+      .then(loadedCards => {
+        setCards(loadedCards)
+      })
+      .catch(err => {
+        console.log(err)
+        setCards([])
+      })
+      .finally(() => {
+        setIsLoading(false)
+      })
   }, [])
   return { cards, setCards, isLoading }
 }

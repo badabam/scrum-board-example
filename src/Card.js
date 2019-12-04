@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
 import PropTypes from 'prop-types'
+import React, { useRef, useState } from 'react'
 import styled from 'styled-components/macro'
 import Bookmark from './Bookmark'
+import useAnswerHeight from './useAnswerHeight'
 
 export default function Card({
   question,
@@ -11,7 +12,9 @@ export default function Card({
 }) {
   const [isHidden, setIsHidden] = useState(true)
   const buttonText = isHidden ? 'Show answer' : 'Hide answer'
-  const onButtonClick = () => setIsHidden(!isHidden)
+  const answerRef = useRef()
+  const maxHeight = useAnswerHeight(answerRef)
+
   return (
     <CardWrapper>
       <Bookmark
@@ -19,24 +22,30 @@ export default function Card({
         onClick={onBookmarkClick} // guard
       />
       <p>{question}</p>
-      <Answer active={!isHidden}>{answer}</Answer>
-      <button onClick={onButtonClick}>{buttonText}</button>
+      <Answer maxHeight={maxHeight} ref={answerRef} active={!isHidden}>
+        {answer}
+      </Answer>
+      <button onClick={toggleAnswer}>{buttonText}</button>
     </CardWrapper>
   )
+
+  function toggleAnswer() {
+    setIsHidden(!isHidden)
+  }
 }
 
-const Answer = styled.pre`
-  transition: all 0.3s;
-  max-height: ${props => (props.active ? '100px' : '0')};
+const Answer = styled.p`
+  transition: height 0.3s ease-in-out;
+  height: ${props => (props.active ? props.maxHeight + 'px' : '0')};
   overflow-y: hidden;
-  white-space: pre-wrap;
   word-break: break-all;
 `
 
 const CardWrapper = styled.section`
   padding: 20px;
   border-radius: 10px;
-  background: #efefef;
+  border: 1px solid #ddd;
+  background: #eee;
   box-shadow: 0 10px 10px #0002;
   position: relative;
 `

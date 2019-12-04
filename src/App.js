@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-
-import Home from './Home.js'
+import React from 'react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Create from './Create.js'
+import Home from './Home.js'
+import useCards from './hooks/useCards.js'
 import Nav from './Nav.js'
 import { patchCard } from './services.js'
-import useCards from './hooks/useCards.js'
 
 function App() {
   const { cards, setCards, isLoading } = useCards()
