@@ -11,7 +11,7 @@ export default function Card({
 }) {
   const [isHidden, setIsHidden] = useState(true)
   const buttonText = isHidden ? 'Show answer' : 'Hide answer'
-  const answerEl = useRef(undefined)
+  const answerEl = useRef()
   const maxHeight = useAnswerHeight(answerEl)
 
   return (
