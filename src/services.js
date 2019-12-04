@@ -1,5 +1,6 @@
-export function getCards() {
-  return fetch('/cards').then(res => res.json())
+export async function getCards() {
+  const res = await fetch('/cards')
+  return res.json()
 }
 
 export function postCard(card) {

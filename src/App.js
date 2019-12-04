@@ -4,14 +4,11 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Home from './Home.js'
 import Create from './Create.js'
 import Nav from './Nav.js'
-import { getCards, patchCard } from './services.js'
+import { patchCard } from './services.js'
+import useCards from './hooks/useCards.js'
 
 function App() {
-  const [cards, setCards] = useState([])
-
-  useEffect(() => {
-    getCards().then(setCards)
-  }, [])
+  const { cards, setCards, isLoading } = useCards()
 
   function toggleBookmark(id) {
     const index = cards.findIndex(card => card._id === id)
@@ -37,7 +34,11 @@ function App() {
       />
       <Switch>
         <Route exact path="/">
-          <Home cards={cards} toggleBookmark={toggleBookmark} />
+          {isLoading ? (
+            <div>... loading ...</div>
+          ) : (
+            <Home cards={cards} toggleBookmark={toggleBookmark} />
+          )}
         </Route>
         <Route path="/create">
           <Create />

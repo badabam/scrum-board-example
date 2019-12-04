@@ -1,0 +1,105 @@
+[
+  {
+    "title": "HTML-Element erzeugen",
+    "question": "Wie erzeuge ich ein neues HTML-Element in JavaScript?",
+    "answer": "document.createElement('div')",
+    "tags": [
+      "javascript",
+      "basics"
+    ],
+    "isBookmarked": true,
+    "id": "ncwyiv1"
+  },
+  {
+    "title": "HTML-Element einfügen 1",
+    "question": "Wie füge ich ein Element über einem anderen Element ein?",
+    "answer": ".insertAdjacentElement(position, element)",
+    "tags": [
+      "javascript",
+      "basics"
+    ],
+    "doPractice": true,
+    "id": "ckmigsw"
+  },
+  {
+    "title": "HTML-Element einfügen 2",
+    "question": "Wie füge ich HTML in ein vorhandenes HTML-Element ein?",
+    "answer": ".innerHTML",
+    "tags": [
+      "javascript",
+      "basics"
+    ],
+    "isBookmarked": true,
+    "id": "b9rvc3i"
+  },
+  {
+    "title": "Array: Elemente ausloggen",
+    "question": "Wie logge ich alle Strings aus einem Array mit mehreren Strings aus?",
+    "answer": "list.forEach(element => console.log(element))",
+    "tags": [
+      "javascript",
+      "basics"
+    ],
+    "id": "bgqxtuh"
+  },
+  {
+    "title": "CSS - Style 1",
+    "question": "Wenn der User runterscrollt, soll die Schriftgröße der Überschrift größer werden!",
+    "answer": "const el = document.querySelector(h1) -> window.addEventListener(\"scroll\", function) -> el.style.fontSize = \"irgendwas Größeres\"",
+    "tags": [
+      "javascript",
+      "basics"
+    ],
+    "id": "2g1yllf"
+  },
+  {
+    "title": "querySelector 1",
+    "question": "Wie schnappe ich mir ein Element mit document.querySelector, das vom Typ range sein soll?",
+    "answer": "document.querySelector('input[type=range]'",
+    "tags": [
+      "javascript",
+      "basics"
+    ],
+    "id": "hbvrmbq"
+  },
+  {
+    "title": "querySelector 2",
+    "question": "Was macht das 'target = document' in der Funktion: \n\nfunction get (sel, target = document) {\nreturn target.querySelector(sel) \n}",
+    "answer": "default-Parameter wird festgelegt, nämlich document als target. Dieser wird automatisch gewählt, wenn wir kein Argument für target eingeben beim Aufrufen der Funktion",
+    "tags": [
+      "javascript",
+      "basics"
+    ],
+    "id": "su7d2vx"
+  },
+  {
+    "title": "innerHTML",
+    "question": "Was ist der Unterschied zwischen .innerHTML und .textContent?",
+    "answer": "Der Inhalt von `.innerHTML` wird als HTML ausgeführt, während `.textContent` nur den Textinhalt verändert.",
+    "tags": [
+      "javascript",
+      "basics"
+    ],
+    "id": "6j6gr2e"
+  },
+  {
+    "title": "HTML-Element einfügen 3",
+    "question": "Was tue ich, wenn ich einem HTML-String vorne etwas anfügen will, z. B. vor das innere HTML eines divs",
+    "answer": "div.insertAdjacentHTML('afterbegin', '<small>hi</small>'",
+    "tags": [
+      "javascript",
+      "basics"
+    ],
+    "id": "m6twpj4"
+  },
+  {
+    "title": "Submit",
+    "question": "Ich habe ein Formular und auf 'submit' soll etwas passieren nach '.addEventListener', aber das Formular soll nicht abgeschickt werden. Was muss ich beachten?",
+    "answer": "event.preventDefault()",
+    "tags": [
+      "javascript",
+      "basics"
+    ],
+    "id": "62f7pj7"
+  }
+]
