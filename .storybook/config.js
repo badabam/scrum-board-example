@@ -1,8 +1,7 @@
-import { configure } from '@storybook/react'
-import { load, addDecorator } from '@storybook/react'
-import styled from 'styled-components/macro'
-import React from 'react'
 import { withInfo } from '@storybook/addon-info'
+import { addDecorator, configure } from '@storybook/react'
+import React from 'react'
+import styled from 'styled-components/macro'
 import GlobalStyles from '../src/GlobalStyles'
 
 // automatically import all files ending in *.stories.js
