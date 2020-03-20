@@ -4,6 +4,13 @@ import styled from 'styled-components/macro'
 import Bookmark from './Bookmark'
 import useAnswerHeight from './hooks/useAnswerHeight'
 
+Card.propTypes = {
+  question: PropTypes.string.isRequired,
+  answer: PropTypes.string.isRequired,
+  onBookmarkClick: PropTypes.func.isRequired,
+  isBookmarked: PropTypes.bool.isRequired,
+}
+
 export default function Card({
   question,
   answer,
@@ -49,10 +56,3 @@ const CardWrapper = styled.section`
   box-shadow: 0 10px 10px #0002;
   position: relative;
 `
-
-Card.propTypes = {
-  question: PropTypes.string.isRequired,
-  answer: PropTypes.string.isRequired,
-  onBookmarkClicked: PropTypes.func.isRequired,
-  isBookmarked: PropTypes.bool.isRequired,
-}
